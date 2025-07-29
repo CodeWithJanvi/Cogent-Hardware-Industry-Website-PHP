@@ -1,0 +1,111 @@
+/* Ninja Slider - Clean and Responsive */
+
+#ninja-slider {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 !important;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+#ninja-slider .slider-inner {
+  margin: 0 auto;
+  position: relative;
+  font-size: 0;
+  box-sizing: border-box;
+}
+
+#ninja-slider ul {
+  position: relative;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  background: #000;
+}
+
+#ninja-slider li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#ninja-slider li.ns-show {
+  opacity: 1;
+  z-index: 1;
+}
+
+#ninja-slider .ns-img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  border-radius: 6px;
+  opacity: 0.6;
+}
+
+/* Captions - Now at Top */
+#ninja-slider .caption {
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 2.8em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: slideInDown 2s ease-in-out;
+}
+
+/* Caption Animation */
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Navigation Arrows */
+.navsWrapper {
+  position: absolute;
+  right: 90px;
+  bottom: 10%;
+  width: 100px;
+  height: 50px;
+  z-index: 10;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 1100px) {
+  #ninja-slider .caption {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  #ninja-slider .caption {
+    font-size: 1.6em;
+    top: 12%;
+  }
+
+  .navsWrapper {
+    display: none;
+  }
+}
